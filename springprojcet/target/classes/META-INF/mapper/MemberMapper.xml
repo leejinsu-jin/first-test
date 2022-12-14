@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+ <mapper namespace="MemberVO">
+ 			<!-- 회원 가입 -->
+  	<insert id="member"  parameterType="MemberVO">
+  		     <![CDATA[
+  		insert into member values
+  		(#{memberId}, #{memberPw}, #{memberName}, #{memberMail},
+  		 #{memberAddr1}, #{memberAddr2}, #{memberAddr3},
+  		  0, now(), 100000, 5000 )
+    ]]>
+  	</insert> 
+  			  <!-- 아이디 중복검사 -->
+  	<select id="idCheck" resultType="int">
+  	 <![CDATA[
+  		select count(*) from book_member where memberId = #{memberId}
+  	   ]]>
+  	</select>
+  	
+ 
+      <!-- 로그인 -->
+      <select id="memberLogin" resultType="MemberVO">
+      
+         select memberId, memberName, adminck, money, point from member where memberId = #{memberId} and memberPw = #{memberPw}
+      
+      </select>
+      <!-- 주문자 정보 -->
+  	<select id="getMemberInfo" resultType="MemberVO">
+  	
+  		SELECT memberId, memberName, memberMail, memberAddr1, memberAddr2, memberAddr3, money, point 
+  		FROM member 
+  		WHERE memberId = #{memberId}
+  	
+  	</select>
+  	</mapper>
+
+ 
+  	

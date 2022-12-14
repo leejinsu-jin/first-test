@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+<typeAliases>
+		<typeAlias type="com.spring.project.model.BoardVO" alias="BoardVO"/>
+		<typeAlias type="com.spring.project.model.MemberVO" alias="MemberVO"/>
+		<typeAlias type="com.spring.project.model.AuthorVO" alias="AuthorVO"/>
+		<typeAlias type="com.spring.project.model.BookVO" alias="BookVO"/>
+		<typeAlias type="com.spring.project.model.CateVO" alias="CateVO"/>
+		<typeAlias type="com.spring.project.model.AttachImageVO" alias="AttachImageVO"/>
+		<typeAlias type="com.spring.project.model.CateFilterVO" alias="CateFilterVO"/>
+		<typeAlias type="com.spring.project.model.CartDTO" alias="CartDTO"/>
+		<typeAlias type="com.spring.project.model.OrderPageDTO" alias="OrderPageDTO"/>
+		<typeAlias type="com.spring.project.model.OrderPageItemDTO" alias="OrderPageItemDTO"/>
+	</typeAliases>
+
+  <mappers>
+  
+     <mapper resource="/sqlmap/mapper/BoardMapper.xml"/>
+     <mapper resource="/sqlmap/mapper/MemberMapper.xml"/>
+     <mapper resource="/sqlmap/mapper/AuthorMapper.xml"/>
+     <mapper resource="/sqlmap/mapper/AdminSangpum.xml"/>
+     <mapper resource="/sqlmap/mapper/AdminSangpum.cate.xml"/>
+     <mapper resource="/sqlmap/mapper/AttachMapper.xml"/>
+     <mapper resource="/sqlmap/mapper/BookMapper.xml"/>
+     <mapper resource="/sqlmap/mapper/CartMapper.xml"/>
+     <mapper resource="/sqlmap/mapper/OrderMapper.xml"/>
+     <mapper resource="/sqlmap/mapper/ReplyMapper.xml"/>
+     
+     </mappers>
+</configuration>

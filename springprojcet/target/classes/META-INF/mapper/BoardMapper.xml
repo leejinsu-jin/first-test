@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="BoardVO">
+	
+	   <!-- 게시판 등록 -->
+    <insert id="insert" parameterType="BoardVO">
+          <![CDATA[
+        insert into vam_board(title, content, writer) values (#{title}, #{content}, #{writer})
+         ]]>
+    </insert>
+	<!--<select id="getBoardList" resultType="BoardVO">
+		<![CDATA[
+			SELECT * FROM vam_board WHERE 1 = 1 
+		]]>
+		
+		<if test="searchType == 'TITLE'">
+			AND title like CONCAT('%',#{searchKeyword}, '%')
+		</if>
+		<if test="searchType == 'CONTENT'">
+			AND content like CONCAT('%',#{searchKeyword}, '%')
+		</if>
+				
+		<![CDATA[
+			ORDER BY SEQ DESC 
+		]]>
+	</select>
+	
+	<select id="getBoard" parameterType="BoardVO" resultType="BoardVO">
+        <![CDATA[
+        select seq,title,writer,content,regDate,cnt from board where seq = #{seq}       
+        ]]>
+    </select>
+	
+	<insert id="insertBoard" parameterType="BoardVO">
+		<![CDATA[
+		INSERT INTO BOARD(SEQ, TITLE, WRITER, CONTENT) 
+		VALUES((SELECT max(seq)+1 FROM BOARD a)
+		,#{title},#{writer},#{content})
+		]]>
+	</insert>
+	
+	<update id="updateBoard" parameterType="BoardVO">
+        UPDATE board
+        SET 
+        title = #{title}, 
+        writer = #{writer},
+        content = #{content}
+        WHERE seq = #{seq}
+    </update>
+    
+    <update id="updateCount" parameterType="BoardVO">
+        UPDATE board
+        SET cnt = cnt + 1
+        WHERE seq = #{seq}
+    </update>
+
+    <delete id="deleteBoard" parameterType="BoardVO">
+        DELETE FROM board
+        WHERE seq = #{seq}
+    </delete>
+	  -->
+	
+
+</mapper>     
