@@ -21,7 +21,7 @@
 			<ul class="list">
 				<c:if test = "${member == null}">	<!-- 로그인 x -->	
 					<li >
-						<a href="/member/login">로그인</a>
+						<a href="/member/login">로그인11111111</a>
 					</li>
 					<li>
 						<a href="/member/join">회원가입</a>
